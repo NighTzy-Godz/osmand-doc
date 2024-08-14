@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Gelion_Bold;
+  src: url("../fonts/Gelion Bold.ttf");
+}
+
+@font-face {
+  font-family: Gelion_Reg;
+  src: url("../fonts/Gelion Regular.ttf");
+}
+
+* {
+  @apply transition-colors duration-300;
+}
+
+.light {
+  --bgColor: 255, 255, 255;
+  --mainColor: 255, 152, 56;
+  --textColor: 35, 55, 72;
+}
+
+.dark {
+  --bgColor: 27, 27, 29;
+  --textColor: 255, 255, 255;
+  --mainColor: 210, 133, 33;
+  --navColor: 36, 37, 38;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Gelion_Bold;
+}
+
+p,
+a {
+  font-family: Gelion_Reg;
+}
