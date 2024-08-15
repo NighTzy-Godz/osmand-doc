@@ -50,14 +50,21 @@ function Favorites() {
         <h3 className="text-textColor text-2xl font-semibold">
           Step 3: Mag-Test
         </h3>
-        <p className="text-textColor text-lg mb-5">Lalabas na dito ang mga</p>
+        <p className="text-textColor text-lg mb-5">
+          Lalabas na dito ang mga na bookmark natin na mga Ilokano. Puwede mo
+          rin gamitin ang search feature para mas mapadali ang paghanap sa isang
+          bookmark .
+        </p>
         <img src={BM3} className="h-[600px]" />
       </div>
       <div className="mb-10">
         <h3 className="text-textColor text-2xl font-semibold">
-          Step 4: I-Click ang Hamburger Menu Ulit
+          Step 4: I-Edit ang Pin Point
         </h3>
-
+        <p className="text-textColor text-xl mb-5">
+          Puwede mo nang i-edit ang mga pagbabago sa notes or address ng napili
+          mong pin point.
+        </p>
         <img src={BM4} className="h-[600px]" />
       </div>
     </div>
