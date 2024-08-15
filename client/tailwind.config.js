@@ -12,6 +12,8 @@ export default {
         textColor: "rgba(var(--textColor))",
         mainColor: "rgba(var(--mainColor))",
         navColor: "rgba(var(--navColor))",
+        activeNavShadow: "rgba(var(--activeNavShadow))",
+        mainColorDark: "rgba(var(--mainColorDark))",
       },
 
       container: {

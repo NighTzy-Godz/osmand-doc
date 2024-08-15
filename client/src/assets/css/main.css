@@ -20,6 +20,8 @@
   --bgColor: 255, 255, 255;
   --mainColor: 255, 152, 56;
   --textColor: 35, 55, 72;
+  --navColor: 255, 255, 255;
+  --mainColorDark: 193, 120, 17;
 }
 
 .dark {
@@ -27,8 +29,17 @@
   --textColor: 255, 255, 255;
   --mainColor: 210, 133, 33;
   --navColor: 36, 37, 38;
+  --activeNavShadow: 96, 103, 112;
+  --mainColorDark: 193, 120, 17;
 }
 
+.pastel {
+  --bgColor: 224, 178, 189;
+  --textColor: 109, 92, 111;
+  --mainColor: 251, 244, 182;
+  --navColor: 210, 159, 171;
+  --mainColorDark: 219, 211, 145;
+}
 h1,
 h2,
 h3,
@@ -39,6 +50,7 @@ h6 {
 }
 
 p,
-a {
+a,
+span {
   font-family: Gelion_Reg;
 }

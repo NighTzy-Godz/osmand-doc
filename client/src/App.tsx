@@ -6,6 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { State } from "./store/store";
 import { useEffect } from "react";
 import { setColorTheme } from "./store/uiSlice";
+import Problem from "./pages/Problem";
+import Solution from "./pages/Solution";
+import Installation from "./pages/Installation";
+import AccountSetup from "./pages/AccountSetup";
+import BookMark from "./pages/BookMark";
+import AddPinpoint from "./pages/AddPinpoint";
+import SaveSync from "./pages/SaveSync";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +32,13 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Home />} />
+          <Route path="/problem" element={<Problem />} />
+          <Route path="/solution" element={<Solution />} />
+          <Route path="/installation" element={<Installation />} />
+          <Route path="/setup" element={<AccountSetup />} />
+          <Route path="/bookmarks" element={<BookMark />} />
+          <Route path="/addToBookmark" element={<AddPinpoint />} />
+          <Route path="/saving_syncing" element={<SaveSync />} />
         </Route>
       </Routes>
     </BrowserRouter>

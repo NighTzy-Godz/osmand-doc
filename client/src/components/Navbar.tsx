@@ -1,14 +1,16 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { State } from "../store/store";
-import { setColorTheme } from "../store/uiSlice";
+import { setColorTheme, setSideNavToggle } from "../store/uiSlice";
+import { RxHamburgerMenu } from "react-icons/rx";
 function Navbar() {
   const dispatch = useDispatch();
 
-  const colorTheme = useSelector((state: State) => state.ui.colorTheme);
+  const { colorTheme, isSideNavToggled } = useSelector(
+    (state: State) => state.ui
+  );
 
   const handleToggleLightMode = () => {
     dispatch(setColorTheme("light"));
@@ -19,14 +21,30 @@ function Navbar() {
     dispatch(setColorTheme("dark"));
     localStorage.setItem("colorTheme", "dark");
   };
+
+  const handleHamburgerToggle = () => {
+    if (!isSideNavToggled) {
+      dispatch(setSideNavToggle(true));
+      document.body.style.overflow = "hidden";
+    } else {
+      dispatch(setSideNavToggle(false));
+      document.body.style.overflow = "auto";
+    }
+  };
   const btnToggleClassName = "w-7 h-7 text-textColor cursor-pointer";
   return (
-    <div className="bg-navColor py-4">
+    <nav className="bg-navColor py-4 sticky top-0 z-50">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
-          <Link to="/" className="text-mainColor text-2xl font-semibold">
-            OsmAnd
-          </Link>
+          <div className="flex items-center gap-2">
+            <RxHamburgerMenu
+              className="h-6 w-6 text-textColor cursor-pointer md:hidden"
+              onClick={handleHamburgerToggle}
+            />
+            <Link to="/" className="text-mainColor text-2xl font-semibold">
+              MHIC Territory
+            </Link>
+          </div>
 
           {colorTheme === "dark" ? (
             <MdLightMode
@@ -41,7 +59,7 @@ function Navbar() {
           )}
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
 
