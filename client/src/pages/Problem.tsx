@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CurrLocation from "../components/CurrLocation";
 import OUTDATED from "../assets/imgs/outdated.png";
 import SPACES from "../assets/imgs/spaces.gif";
 import { Link } from "react-router-dom";
 function Problem() {
+  useEffect(() => {
+    document.title = "MHIC Territory | Problems";
+  }, []);
   return (
     <div className="pb-5">
       <CurrLocation location="The Problem" />

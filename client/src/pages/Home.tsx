@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import CurrLocation from "../components/CurrLocation";
 import { Link } from "react-router-dom";
 function Home() {
+  useEffect(() => {
+    document.title = "MHIC Territory | Greetings!";
+  }, []);
+
   return (
     <React.Fragment>
       <CurrLocation location="Home" />
