@@ -5,10 +5,11 @@ import NoSpaces from "../assets/imgs/noSpaces.gif";
 import { Link } from "react-router-dom";
 function Solution() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = "MHIC Territory | Solution";
   }, []);
   return (
-    <div>
+    <div className="pb-5">
       <CurrLocation location="Solution" />
 
       <h1 className="mb-5 text-mainColor text-6xl">Solution</h1>

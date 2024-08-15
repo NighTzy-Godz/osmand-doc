@@ -5,6 +5,7 @@ import SPACES from "../assets/imgs/spaces.gif";
 import { Link } from "react-router-dom";
 function Problem() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = "MHIC Territory | Problems";
   }, []);
   return (

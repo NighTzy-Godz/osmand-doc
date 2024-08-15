@@ -4,6 +4,7 @@ import CurrLocation from "../components/CurrLocation";
 import { Link } from "react-router-dom";
 function Home() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = "MHIC Territory | Greetings!";
   }, []);
 
@@ -44,12 +45,14 @@ function Home() {
         natin kung ano ang common na kinakaharap na problema ng bawat isa at ng
         mga territory servants.
       </p>
-      <Link
-        to="/problem"
-        className="px-4 py-2 text-lg text-textColor bg-mainColor rounded-2xl hover:bg-mainColorDark"
-      >
-        Click Here: Common Problems
-      </Link>
+      <div className="mb-5">
+        <Link
+          to="/problem"
+          className="px-4 py-2 text-lg text-textColor bg-mainColor rounded-2xl hover:bg-mainColorDark"
+        >
+          Click Here: Common Problems
+        </Link>
+      </div>
     </React.Fragment>
   );
 }

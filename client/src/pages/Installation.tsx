@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CurrLocation from "../components/CurrLocation";
 import { Link } from "react-router-dom";
 import STEP1 from "../assets/imgs/install1.jpg";
 import STEP2 from "../assets/imgs/install2.jpg";
 import STEP3 from "../assets/imgs/install3.jpg";
 function Installation() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "MHIC Territory | Installation Guide";
+  }, []);
   return (
-    <div>
+    <div className="pb-5">
       <CurrLocation location="Installation Guide" />
       <h1 className="mb-5 text-mainColor text-6xl">Installation</h1>
       <p className="text-textColor text-xl mb-10">
