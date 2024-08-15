@@ -26,8 +26,8 @@ const sideNavLinks = [
   },
   {
     id: 12,
-    name: "Where's the Bookmark?",
-    path: "/bookmarks",
+    name: "Favorites",
+    path: "/favorites",
   },
   {
     id: 13,

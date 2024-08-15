@@ -10,7 +10,7 @@ import Problem from "./pages/Problem";
 import Solution from "./pages/Solution";
 import Installation from "./pages/Installation";
 import AccountSetup from "./pages/AccountSetup";
-import BookMark from "./pages/BookMark";
+import BookMark from "./pages/Favorites";
 import AddPinpoint from "./pages/AddPinpoint";
 import SaveSync from "./pages/SaveSync";
 
@@ -36,7 +36,7 @@ function App() {
           <Route path="/solution" element={<Solution />} />
           <Route path="/installation" element={<Installation />} />
           <Route path="/setup" element={<AccountSetup />} />
-          <Route path="/bookmarks" element={<BookMark />} />
+          <Route path="/favorites" element={<BookMark />} />
           <Route path="/addToBookmark" element={<AddPinpoint />} />
           <Route path="/saving_syncing" element={<SaveSync />} />
         </Route>

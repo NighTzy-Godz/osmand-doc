@@ -17,7 +17,7 @@ function AccountSetup() {
   }, []);
   return (
     <div className="pb-5">
-      <CurrLocation location="Installation Guide" />
+      <CurrLocation location="Account Setup" />
       <h1 className="mb-5 text-mainColor text-6xl">Account Setup</h1>
       <p className="text-textColor text-xl mb-10">
         Ang pag se-setup ng account ang pinaka mabusising proseso ({" "}

@@ -15,9 +15,8 @@ function Installation() {
       <h1 className="mb-5 text-mainColor text-6xl">Installation</h1>
       <p className="text-textColor text-xl mb-10">
         Ang pag-install or pag-download ng{" "}
-        <span className="font-semibold">OsmAnd</span> ay madali lang. Para ka
-        lang nagluto ng pritong itlog (
-        <span className="font-semibold italic">Yung hindi po sunog ah</span>).
+        <span className="font-semibold">OsmAnd</span> ay madali lang. Kasing
+        dali lang kung paano ka pangitiin ni crush.
         <br />
         <br />
         Sundan lamang ang steps sa baba para makapag download nito or puwede
