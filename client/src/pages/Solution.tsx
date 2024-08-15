@@ -42,7 +42,7 @@ function Solution() {
           Reason 2: Easier to Edit
         </h3>
         <p className="text-textColor text-lg mb-5">
-          Ang <span className="font-semibold">OsmAnd</span> ay may feautre na
+          Ang <span className="font-semibold">OsmAnd</span> ay may feature na
           kung saan hindi mo na kailangan na mag spam ng maraming{" "}
           <span className="font-semibold">spaces</span> para lang mapunta sa
           next line. Just hit "<span className="font-semibold">Enter</span>" at
@@ -60,7 +60,7 @@ function Solution() {
           Reason 3: Synchronized Data
         </h3>
         <p className="text-textColor text-lg mb-5">
-          Ang <span className="font-semibold">OsmAnd</span> ay may feautre na
+          Ang <span className="font-semibold">OsmAnd</span> ay may feature na
           kung saan puwede mag synchronized ang mga data. Pero kailangang
           gumamit ng isang account lang dahil wala itong feature na puwedeng
           gumamit ng maraming account at parang magiging contributor nalang. For
