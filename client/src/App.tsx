@@ -13,6 +13,7 @@ import AccountSetup from "./pages/AccountSetup";
 import BookMark from "./pages/Favorites";
 import AddPinpoint from "./pages/AddPinpoint";
 import SaveSync from "./pages/SaveSync";
+import NotFound from "./components/NotFound";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ function App() {
           <Route path="/addToBookmark" element={<AddPinpoint />} />
           <Route path="/saving_syncing" element={<SaveSync />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
