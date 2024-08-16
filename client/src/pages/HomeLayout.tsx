@@ -33,7 +33,7 @@ function HomeLayout() {
     <div className={colorTheme}>
       <Navbar />
       <div
-        className={`absolute w-full   z-40 transition-all delay-150 ${
+        className={`fixed w-full   z-40  transition-all delay-150 ${
           isSideNavToggled && currWidth <= 768
             ? "translate-x-0"
             : "-translate-x-full"

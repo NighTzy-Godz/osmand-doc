@@ -12,7 +12,7 @@ import SETUP8 from "../assets/imgs/setup8.jpg";
 
 function AccountSetup() {
   useEffect(() => {
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     document.title = "MHIC Territory | Account Setup";
   }, []);
   return (

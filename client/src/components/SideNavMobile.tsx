@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { State } from "../store/store";
 import { setSideNavToggle } from "../store/uiSlice";
+import React from "react";
 
 function SideNavMobile() {
   const dispatch = useDispatch();
@@ -35,13 +36,15 @@ function SideNavMobile() {
   });
 
   return (
-    <div
-      className={`sticky sm:w-full w-3/4 top-16 h-[92dvh]  bg-bgColor border-r-[1px] ${borderColor}`}
-    >
-      <div className="container mx-auto">
-        <div className="flex flex-col py-5 pr-2">{renderSideNavLinks}</div>
+    <React.Fragment>
+      <div
+        className={` sm:w-full w-3/4 h-[94dvh]   bg-bgColor border-r-[1px] ${borderColor}`}
+      >
+        <div className="container mx-auto">
+          <div className="flex flex-col py-5 pr-2">{renderSideNavLinks}</div>
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 

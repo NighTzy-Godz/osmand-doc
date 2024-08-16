@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CurrLocation from "../components/CurrLocation";
 import OLD_BM from "../assets/imgs/old_bm.jpg";
 
@@ -7,6 +7,10 @@ import BM2 from "../assets/imgs/bm2.jpg";
 import BM3 from "../assets/imgs/bm3.jpg";
 import BM4 from "../assets/imgs/bm4.jpg";
 function Favorites() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "MHIC Territory | Favorites";
+  }, []);
   return (
     <div className="pb-5">
       {" "}
