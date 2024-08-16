@@ -31,7 +31,7 @@ const sideNavLinks = [
   },
   {
     id: 13,
-    name: "Adding Pinpoint in a Favorites",
+    name: "Adding Pinpoint sa Favorites",
     path: "/addToBookmark",
   },
   {

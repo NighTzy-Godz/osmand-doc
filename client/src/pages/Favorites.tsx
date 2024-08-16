@@ -6,6 +6,7 @@ import BM1 from "../assets/imgs/bm1.jpg";
 import BM2 from "../assets/imgs/bm2.jpg";
 import BM3 from "../assets/imgs/bm3.jpg";
 import BM4 from "../assets/imgs/bm4.jpg";
+import { Link } from "react-router-dom";
 function Favorites() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -14,7 +15,7 @@ function Favorites() {
   return (
     <div className="pb-5">
       {" "}
-      <CurrLocation location="Finding Bookmark" />
+      <CurrLocation location="Favorites" />
       <h1 className="mb-5 text-mainColor text-6xl">Favorites</h1>
       <p className="text-textColor text-xl mb-10">
         <span className="italic">Favorites</span> din ang tawag sa Maps.Me dati.
@@ -69,8 +70,20 @@ function Favorites() {
           Puwede mo nang i-edit ang mga pagbabago sa notes or address ng napili
           mong pin point.
         </p>
-        <img src={BM4} className="h-[600px]" />
+        <img src={BM4} className="h-[600px] mb-5" />
+        <p className="text-textColor text-lg mb-5">
+          Ngayon ay alam mo na kung paano makita ang mga pin points sa{" "}
+          <span className="italic">Bookmark</span>. Sa susunod na artikulo,
+          pag-aaralan naman natin kung paano magdagdag ng pinpoint para sa
+          nahanap nating bagong Ilokano.
+        </p>
       </div>
+      <Link
+        to="/addToBookmark"
+        className="px-4 py-2 text-lg text-textColor bg-mainColor rounded-2xl hover:bg-mainColorDark"
+      >
+        Click Here: Add Pinpoint
+      </Link>
     </div>
   );
 }
