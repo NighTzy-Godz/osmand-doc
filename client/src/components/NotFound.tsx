@@ -18,7 +18,7 @@ function NotFound() {
           Mapukpukaw ka ngay kabsat? Diak ammo no sadino ti papanam.
         </p>
         <Link
-          className="mt-10 block md:w-1/2 sm:w-3/4 w-full mx-auto bg-textColor py-2 rounded-lg md:text-xl text-lg"
+          className="mt-10 block md:w-1/2 sm:w-3/4 w-full mx-auto bg-textColor text-bgColor py-2 rounded-lg md:text-xl text-lg"
           to="/"
         >
           Go Back Home
