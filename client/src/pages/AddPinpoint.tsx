@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CurrLocation from "../components/CurrLocation";
 import PP1 from "../assets/imgs/pp1.jpg";
 import PP2 from "../assets/imgs/pp2.jpg";
@@ -7,6 +7,10 @@ import PP4 from "../assets/imgs/pp4.jpg";
 import PP5 from "../assets/imgs/pp5.jpg";
 import { Link } from "react-router-dom";
 function AddPinpoint() {
+  useEffect(() => {
+    document.title = "MHIC Territory | Pinpoint";
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="pb-5">
       <CurrLocation location="Add Pinpoint" />

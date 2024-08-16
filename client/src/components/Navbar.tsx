@@ -45,7 +45,7 @@ function Navbar() {
         key={item.id}
         onClick={() => handleColorThemeClick(item.value)}
       >
-        <div className={`bg-[rgba(${item.color})] h-9 rounded-full w-9`} />
+        <div className={`${item.color} h-9 rounded-full w-9`} />
         <p className="text-bgColor font-gelionReg">{item.name}</p>
       </div>
     );
@@ -77,18 +77,6 @@ function Navbar() {
               </div>
             )}
           </div>
-
-          {/* {colorTheme === "dark" ? (
-            <MdLightMode
-              className={btnToggleClassName}
-              onClick={handleToggleLightMode}
-            />
-          ) : (
-            <MdDarkMode
-              onClick={handleToggleDarkMode}
-              className={btnToggleClassName}
-            />
-          )} */}
         </div>
       </div>
     </nav>

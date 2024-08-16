@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CurrLocation from "../components/CurrLocation";
 
 import SP1 from "../assets/imgs/setup1.jpg";
@@ -12,6 +12,10 @@ import SS5 from "../assets/imgs/ss5.jpg";
 import { Link } from "react-router-dom";
 
 function SaveSync() {
+  useEffect(() => {
+    document.title = "MHIC Territory | Saving";
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="pb-5">
       {" "}
