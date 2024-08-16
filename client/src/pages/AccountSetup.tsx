@@ -19,6 +19,16 @@ function AccountSetup() {
     <div className="pb-5">
       <CurrLocation location="Account Setup" />
       <h1 className="mb-5 text-mainColor text-6xl">Account Setup</h1>
+
+      <div className="w-full bg-mainColor/70 mb-5 px-5 py-2 rounded-3xl">
+        <p className="text-textColor">
+          {" "}
+          <span className="font-semibold">Paalala:</span> Mas maganda kung
+          lumapit muna kay Bro. Hubero para mas mapadali ang pagkuha ng code.
+          Maraming Salamat!
+        </p>
+      </div>
+
       <p className="text-textColor text-xl mb-10">
         Ang pag se-setup ng account ang pinaka mabusising proseso ({" "}
         <span className="font-semibold italic">sa tingin ko hehe</span> ) para
