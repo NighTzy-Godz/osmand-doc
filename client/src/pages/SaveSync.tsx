@@ -65,7 +65,7 @@ function SaveSync() {
           Taaaddaaa! Ito ang makikita mo kapag na i-sync mo na ang data across
           devices. Maraming salamat sa iyo kung nakarating ka sa pinaka huling
           step na ito. Pagpalain nawa ni Jehova ang pagiging masunurin mo
-          &#128519; ({" "}
+          &#128578; ({" "}
           <Link
             className="text-mainColorDark hover:underline"
             target="_blank"
