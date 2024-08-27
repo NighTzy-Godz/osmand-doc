@@ -48,6 +48,7 @@ function TerritoryForm() {
   const handleTerritoryFormSubmit = () => {
     if (!searchDate) {
       toast.error("Search Date is a required field");
+      return;
     }
 
     toast.success("Simulating Success State");
