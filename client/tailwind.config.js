@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./node_modules/flowbite/**/*.js"],
   mode: "jit",
   theme: {
     extend: {
@@ -36,5 +37,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };

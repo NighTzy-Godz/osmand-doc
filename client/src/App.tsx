@@ -14,6 +14,8 @@ import BookMark from "./pages/Favorites";
 import AddPinpoint from "./pages/AddPinpoint";
 import SaveSync from "./pages/SaveSync";
 import NotFound from "./components/NotFound";
+import TerritoryForm from "./pages/TerritoryForm";
+import { Toaster } from "sonner";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +32,14 @@ function App() {
   }, [dispatch, colorTheme]);
   return (
     <BrowserRouter>
+      <Toaster
+        duration={2000}
+        richColors
+        position="top-center"
+        toastOptions={{
+          className: "font-gelionReg text-lg transition-all duration-500",
+        }}
+      />
       <Routes>
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Home />} />
@@ -40,6 +50,7 @@ function App() {
           <Route path="/favorites" element={<BookMark />} />
           <Route path="/addToBookmark" element={<AddPinpoint />} />
           <Route path="/saving_syncing" element={<SaveSync />} />
+          <Route path="/territoryForm" element={<TerritoryForm />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

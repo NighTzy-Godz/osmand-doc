@@ -39,6 +39,11 @@ const sideNavLinks = [
     name: "Saving and Syncing",
     path: "/saving_syncing",
   },
+  {
+    id: 15,
+    name: "Territory Form",
+    path: "/territoryForm",
+  },
 ];
 
 export default sideNavLinks;
