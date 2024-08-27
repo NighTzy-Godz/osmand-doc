@@ -45,7 +45,7 @@ function TerritoryForm() {
     setIsEnded(!isEnded);
   };
 
-  const handleTerritoryFormSubmit = (data: CreateTerritorySearch) => {
+  const handleTerritoryFormSubmit = () => {
     if (!searchDate) {
       toast.error("Search Date is a required field");
     }
