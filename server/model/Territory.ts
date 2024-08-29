@@ -1,24 +1,39 @@
 import mongoose, { Schema } from "mongoose";
 
-const DB_URL = "mongodb://localhost:27017/mhic";
+const DB_URL = process.env.DB_URL || "mongodb://localhost:27017/mhic";
+
 mongoose
   .connect(DB_URL)
   .then(() => console.log("Connected to the database - Territory"))
   .catch((err) => console.log(`Error on Territory -- ${err}`));
 
+export enum GroupNum {
+  G1 = "Group 1",
+  G2 = "Group 2",
+  G3 = "Group 3",
+  G4 = "Group 4",
+}
+
 interface ITerritory {
+  groupNum: GroupNum;
   territoryNum: number;
   servant: string;
-  dateStart: Date;
-  dateEnded: Date;
-  searchEnded: string;
-  toStartSearch: string;
+  searchDate: Date;
+  terrNumEnded?: Date;
+  searchEndedImg: string;
+  toStartSearchImg: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
 const territorySchema: Schema<ITerritory> = new Schema(
   {
+    groupNum: {
+      type: String,
+      enum: Object.keys(GroupNum),
+      required: true,
+    },
+
     territoryNum: {
       type: Number,
       required: true,
@@ -30,22 +45,22 @@ const territorySchema: Schema<ITerritory> = new Schema(
       type: String,
       required: true,
     },
-    dateStart: {
+
+    searchDate: {
       type: Date,
       required: true,
     },
 
-    dateEnded: {
+    terrNumEnded: {
       type: Date,
-      required: true,
     },
 
-    searchEnded: {
+    searchEndedImg: {
       type: String,
       required: true,
     },
 
-    toStartSearch: {
+    toStartSearchImg: {
       type: String,
       required: true,
     },

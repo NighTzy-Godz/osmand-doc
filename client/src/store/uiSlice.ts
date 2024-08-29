@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface UIState {
+export interface UIState {
   colorTheme: string;
   isSideNavToggled: boolean;
   colorPalleteToggled: boolean;

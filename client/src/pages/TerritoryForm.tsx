@@ -14,8 +14,15 @@ import groupNum from "../data/groupNum";
 import { CreateTerritorySearch } from "../data/territoryInterface";
 import { toast } from "sonner";
 import FileUploader from "../components/FileUploader";
+import { useAddSearchHistoryMutation } from "../store/territoryApi";
+import { renderError } from "../utils";
+import { useNavigate } from "react-router-dom";
 
 function TerritoryForm() {
+  const navigate = useNavigate();
+  const [addSearchHistory, { error, isSuccess }] =
+    useAddSearchHistoryMutation();
+
   const [isEnded, setIsEnded] = useState(false);
   const [searchDate, setSearchDate] = useState<Date | null>(null);
   const [territoryNumEnded, setTerritoryNumEnded] = useState<Date | null>(null);
@@ -45,13 +52,48 @@ function TerritoryForm() {
     setIsEnded(!isEnded);
   };
 
-  const handleTerritoryFormSubmit = () => {
+  useEffect(() => {
+    if (error) {
+      console.log(error);
+      renderError(error);
+    }
+    if (isSuccess) {
+      toast.success("Added to the Territory Search History!");
+      navigate("/");
+    }
+  }, [isSuccess, error]);
+
+  const handleTerritoryFormSubmit = async (data: CreateTerritorySearch) => {
+    const {
+      groupNum,
+      territoryNum,
+      servant,
+      searchEndedImg,
+      toStartSearchImg,
+    } = data;
+
     if (!searchDate) {
       toast.error("Search Date is a required field");
       return;
     }
 
-    toast.success("Simulating Success State");
+    const formData = new FormData();
+
+    formData.append("groupNum", groupNum);
+    formData.append("territoryNum", territoryNum as any);
+    formData.append("searchDate", searchDate as any);
+    formData.append("servant", servant);
+    if (searchEndedImg?.[0]) {
+      formData.append("searchEndedImg", searchEndedImg[0]);
+    }
+    if (toStartSearchImg?.[0]) {
+      formData.append("toStartSearchImg", toStartSearchImg[0]);
+    }
+    if (territoryNumEnded) {
+      formData.append("territoryNumEnd", territoryNumEnded as any);
+    }
+
+    addSearchHistory(formData);
   };
 
   return (
