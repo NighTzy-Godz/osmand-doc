@@ -1,7 +1,10 @@
 import { Router } from "express";
 import multer from "multer";
 import { storage } from "../cloudinary";
-import { addTerritory } from "../controller/territoryController";
+import {
+  addTerritory,
+  getTerritoryHistory,
+} from "../controller/territoryController";
 
 const upload = multer({ storage });
 
@@ -13,5 +16,5 @@ const uploadFields = upload.fields([
 ]);
 
 app.post("/createSearch", uploadFields, addTerritory);
-
+app.get("/searchHistory", getTerritoryHistory);
 export default app;

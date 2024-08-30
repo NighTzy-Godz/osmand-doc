@@ -2,15 +2,8 @@ import { NextFunction, Request, Response } from "express";
 import { createSearchValidator } from "../validator/formValidator";
 import Territory from "../model/Territory";
 
-interface MulterRequest extends Request {
-  files: {
-    searchEndedImg?: Express.Multer.File[];
-    toStartSearchImg?: Express.Multer.File[];
-  };
-}
-
 export const addTerritory = async (
-  req: MulterRequest,
+  req: Request,
   res: Response,
   next: NextFunction
 ) => {
@@ -21,11 +14,14 @@ export const addTerritory = async (
     const { error } = createSearchValidator(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
-    if (!req.files) return res.status(400).send("Images are required");
-    const searchEndedImg = req.files.searchEndedImg?.[0].path;
-    const toStartSearchImg = req.files.toStartSearchImg?.[0].path;
+    const imgFiles = req.files as {
+      searchEndedImg?: Express.Multer.File[];
+      toStartSearchImg?: Express.Multer.File[];
+    };
 
-    console.log(req.files);
+    if (!imgFiles) return res.status(400).send("Images are required");
+    const searchEndedImg = imgFiles.searchEndedImg?.[0].path;
+    const toStartSearchImg = imgFiles.toStartSearchImg?.[0].path;
 
     const newSearch = new Territory({
       groupNum,
@@ -43,6 +39,20 @@ export const addTerritory = async (
     await newSearch.save();
 
     res.json(newSearch);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getTerritoryHistory = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const territories = await Territory.find();
+
+    res.json(territories);
   } catch (error) {
     next(error);
   }
