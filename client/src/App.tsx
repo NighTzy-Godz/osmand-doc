@@ -17,7 +17,6 @@ import NotFound from "./components/NotFound";
 import TerritoryForm from "./pages/TerritoryForm";
 import { Toaster } from "sonner";
 import TerritoryHistory from "./pages/TerritoryHistory";
-import Test from "./pages/Test";
 
 function App() {
   const dispatch = useDispatch();
