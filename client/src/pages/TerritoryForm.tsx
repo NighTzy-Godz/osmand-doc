@@ -53,6 +53,8 @@ function TerritoryForm() {
   };
 
   useEffect(() => {
+    document.title = "MHIC Territory | Search Form";
+
     if (error) {
       renderError(error);
     }

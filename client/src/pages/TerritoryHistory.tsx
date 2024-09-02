@@ -1,5 +1,5 @@
 import { Table } from "flowbite-react";
-import React from "react";
+import React, { useEffect } from "react";
 import _ from "lodash";
 import { useGetSearchHistoryQuery } from "../store/territoryApi";
 import { ITerritory } from "../data/territoryInterface";
@@ -17,6 +17,10 @@ export interface TableColumns {
 }
 
 function TerritoryHistory() {
+  useEffect(() => {
+    document.title = "MHIC Territory | History";
+  }, []);
+
   const { data } = useGetSearchHistoryQuery("");
   const territoryHistory: ITerritory[] = data;
 
