@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
-
+console.log(BASE_URL);
 const territoryApi = createApi({
   reducerPath: "territory",
   baseQuery: fetchBaseQuery({
