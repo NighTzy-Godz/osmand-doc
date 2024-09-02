@@ -20,7 +20,7 @@ export const createSearchValidator = (data: CreateTerritorySearch) => {
         "any.only": "Invalid Employment Type",
       }),
 
-    territoryNum: Joi.number().min(1).max(25).required().messages({
+    territoryNum: Joi.number().min(1).max(35).required().messages({
       "number.empty": "Territory Number cannot be empty",
       "number.base": "Territory Number should be a type of number",
       "any.required": "Territory Number is a required field",
