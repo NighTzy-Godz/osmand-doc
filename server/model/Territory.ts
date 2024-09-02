@@ -7,13 +7,6 @@ mongoose
   .then(() => console.log("Connected to the database - Territory"))
   .catch((err) => console.log(`Error on Territory -- ${err}`));
 
-export enum GroupNum {
-  G1 = "Group 1",
-  G2 = "Group 2",
-  G3 = "Group 3",
-  G4 = "Group 4",
-}
-
 interface ITerritory {
   groupNum: GroupNum;
   territoryNum: number;
@@ -25,12 +18,18 @@ interface ITerritory {
   createdAt: Date;
   updatedAt: Date;
 }
+export enum GroupNum {
+  G1 = "Group 1",
+  G2 = "Group 2",
+  G3 = "Group 3",
+  G4 = "Group 4",
+}
 
 const territorySchema: Schema<ITerritory> = new Schema(
   {
     groupNum: {
       type: String,
-      enum: Object.keys(GroupNum),
+      enum: Object.values(GroupNum),
       required: true,
     },
 

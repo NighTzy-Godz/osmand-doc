@@ -20,41 +20,41 @@ app.use(cors());
 
 app.use("/api/territory", territoryRoute);
 
-// mongoose
-//   .connect(DB_URL!, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     maxPoolSize: 10,
-//   } as ConnectOptions)
-//   .then(() => console.log("Connected to the DB"))
-//   .catch((err) => console.log("Error on DB Connection - ", err));
+mongoose
+  .connect(DB_URL!, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    maxPoolSize: 10,
+  } as ConnectOptions)
+  .then(() => console.log("Connected to the DB"))
+  .catch((err) => console.log("Error on DB Connection - ", err));
 
-// const keepDBAlive = async () => {
-//   try {
-//     const db = mongoose.connection;
-//     await db.collection("territory").findOne({});
-//     console.log("Kept the DB alive");
-//   } catch (error) {
-//     console.log("Error on Keeping the DB ALive - ", error);
-//   }
-// };
+const keepDBAlive = async () => {
+  try {
+    const db = mongoose.connection;
+    await db.collection("territory").findOne({});
+    console.log("Kept the DB alive");
+  } catch (error) {
+    console.log("Error on Keeping the DB ALive - ", error);
+  }
+};
 
-// const keepBackendAlive = async () => {
-//   try {
-//     await axios.get(`${PROD_URL}/healthcheck`);
-//     console.log("Backend keep-alive");
-//   } catch (error) {
-//     console.log("Error on Backend alive - ", error);
-//   }
-// };
+const keepBackendAlive = async () => {
+  try {
+    await axios.get(`${PROD_URL}/healthcheck`);
+    console.log("Backend keep-alive");
+  } catch (error) {
+    console.log("Error on Backend alive - ", error);
+  }
+};
 
-// const runWarmUp = () => {
-//   keepBackendAlive();
-//   keepDBAlive();
-// };
+const runWarmUp = () => {
+  keepBackendAlive();
+  keepDBAlive();
+};
 
-// setInterval(runWarmUp, 500000);
+setInterval(runWarmUp, 500000);
 
-// runWarmUp();
+runWarmUp();
 
 app.listen(PORT, () => console.log("Hello from PORT 8080"));

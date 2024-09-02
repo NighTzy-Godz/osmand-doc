@@ -16,5 +16,5 @@ const uploadFields = upload.fields([
 ]);
 
 app.post("/createSearch", uploadFields, addTerritory);
-app.get("/searchHistory", getTerritoryHistory);
+app.get("/getSearchHistory", getTerritoryHistory);
 export default app;
