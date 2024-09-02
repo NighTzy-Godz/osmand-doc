@@ -1,6 +1,7 @@
 import { SerializedError } from "@reduxjs/toolkit";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { toast } from "sonner";
+import territoryNums from "../data/territoryNum";
 
 export function renderError(
   error: FetchBaseQueryError | SerializedError | undefined
@@ -15,4 +16,11 @@ export function renderError(
       toast.error(error.data);
     }
   }
+}
+
+export function renderTerritoryBrgy(terrNum: number) {
+  const index = territoryNums.findIndex((item) => item.id === terrNum);
+  const foundTerr = territoryNums[index];
+
+  return foundTerr.name;
 }

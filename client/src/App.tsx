@@ -16,6 +16,8 @@ import SaveSync from "./pages/SaveSync";
 import NotFound from "./components/NotFound";
 import TerritoryForm from "./pages/TerritoryForm";
 import { Toaster } from "sonner";
+import TerritoryHistory from "./pages/TerritoryHistory";
+import Test from "./pages/Test";
 
 function App() {
   const dispatch = useDispatch();
@@ -51,7 +53,9 @@ function App() {
           <Route path="/addToBookmark" element={<AddPinpoint />} />
           <Route path="/saving_syncing" element={<SaveSync />} />
           <Route path="/territoryForm" element={<TerritoryForm />} />
+          <Route path="/territoryHistory" element={<TerritoryHistory />} />
         </Route>
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

@@ -44,6 +44,11 @@ const sideNavLinks = [
     name: "Territory Form",
     path: "/territoryForm",
   },
+  {
+    id: 16,
+    name: "Territory History",
+    path: "/territoryHistory",
+  },
 ];
 
 export default sideNavLinks;

@@ -54,12 +54,11 @@ function TerritoryForm() {
 
   useEffect(() => {
     if (error) {
-      console.log(error);
       renderError(error);
     }
     if (isSuccess) {
       toast.success("Added to the Territory Search History!");
-      navigate("/");
+      navigate("/territoryHistory");
     }
   }, [isSuccess, error]);
 
@@ -74,6 +73,11 @@ function TerritoryForm() {
 
     if (!searchDate) {
       toast.error("Search Date is a required field");
+      return;
+    }
+
+    if (isEnded && !territoryNumEnded) {
+      toast.error("Territory End Date is a required field");
       return;
     }
 
@@ -189,7 +193,7 @@ function TerritoryForm() {
               />
             </div>
             <div className="w-full">
-              <Label>Search Date</Label>
+              <Label>Territory Number End Date</Label>
               <Datepicker
                 onSelectedDateChanged={(date) => setTerritoryNumEnded(date)}
                 className="disabled:text-red-400"

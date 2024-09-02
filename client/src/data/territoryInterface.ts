@@ -1,10 +1,13 @@
+import { TerritoryData } from "./territoryNum";
+
 export interface ITerritory {
+  _id: string;
   territoryNum: number;
   servant: string;
   searchDate: Date;
   terrNumEnded?: Date;
-  searchEndedImg: FileList;
-  toStartSearchImg: FileList;
+  searchEndedImg: string;
+  toStartSearchImg: string;
   createdAt: Date;
   updatedAt: Date;
 }
