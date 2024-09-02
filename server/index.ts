@@ -20,6 +20,10 @@ app.use(cors());
 
 app.use("/api/territory", territoryRoute);
 
+app.get("/healthcheck", (req, res) => {
+  res.send("Hi There");
+});
+
 mongoose
   .connect(DB_URL!, {
     useNewUrlParser: true,
