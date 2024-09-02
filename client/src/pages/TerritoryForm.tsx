@@ -102,15 +102,6 @@ function TerritoryForm() {
 
   return (
     <div className="pb-5 md:w-3/4 w-full mx-auto ">
-      <div className="w-full bg-mainColor/70 mb-5 px-5 py-2 rounded-3xl">
-        <p className="text-textColor">
-          {" "}
-          <span className="font-semibold">Paalala:</span> Ang form na ito ay
-          hindi pa nag po-proceses sa kasalukuyan. Dinevelop muna ito para
-          mayroon tayong ideya kung ano ang itsura ng form.
-        </p>
-      </div>
-
       <div className="mb-10">
         <h1 className="text-4xl text-mainColor mb-2">
           Territory Searching Form
